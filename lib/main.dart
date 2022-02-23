@@ -11,6 +11,7 @@ void main() {
         appBar: AppBar(
           title: Text('rigth app'),
         ),
+        body: const Text('mustapha your are bigger'),
       ),
     ),
   );
