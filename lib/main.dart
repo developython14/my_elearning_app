@@ -1,41 +1,17 @@
+// Copyright 2018 The Flutter team. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-    return MaterialApp(
-      title: 'Welcome to Flutter',
+  runApp(
+    MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to mustapha app'),
-        ),
-        body: const Center(
-          child: randomwords(),
+          title: Text('rigth app'),
         ),
       ),
-    );
-  }
-}
-
-class randomwords extends StatefulWidget {
-  const randomwords({Key? key}) : super(key: key);
-
-  @override
-  _randomwordsState createState() => _randomwordsState();
-}
-
-class _randomwordsState extends State<randomwords> {
-  @override
-  Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-    return Text(wordPair.asPascalCase);
-  }
+    ),
+  );
 }
