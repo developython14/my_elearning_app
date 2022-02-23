@@ -4,49 +4,23 @@
 
 import 'package:flutter/material.dart';
 
-
-var list = ["mustapha", "samir", "fares", "abdelkader", "yacine"];
-var i = 0;
-  
-class RandomWords extends StatefulWidget {
-  const RandomWords({ Key? key }) : super(key: key);
-
-  @override
-  _RandomWordsState createState() => _RandomWordsState();
-}
-
-class _RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class _RandomWordsState extends State<RandomWords> {
-    @override
-    Widget build(BuildContext context) {
-      final wordPair = list[i];
-      return Text(wordPair);
-    }
-  }
-
 void main() {
+  var list = ["mustapha", "samir", "fares", "abdelkader", "yacine"];
+  var i = 0;
   runApp(
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('rigth app'),
           centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 182, 31, 46),
+          backgroundColor: Color.fromARGB(255, 233, 106, 119),
         ),
-        body: const Center(child:  Text(RandomWords()),
+        body: Image.asset('assets/2.jpg'), //
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            },
-          child: const Icon(Icons.navigation),
+          onPressed: () => {i = (i + 1) % 4},
+          child: Icon(Icons.add_card),
         ),
       ),
     ),
   );
 }
-
