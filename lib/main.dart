@@ -9,9 +9,14 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('rigth app'),
+          title: const Text('rigth app'),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(255, 182, 31, 46),
         ),
-        body: const Text('mustapha your are bigger'),
+        body: const Center(
+          child: Text('mustapha your are bigger'),
+        ),
+        backgroundColor: const Color.fromARGB(255, 78, 224, 83),
       ),
     ),
   );
