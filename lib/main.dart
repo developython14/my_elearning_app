@@ -18,21 +18,18 @@ void main() {
         ),
         body: Row(
           children: <Widget>[
-            Text('$name',
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 25, 116, 128))),
-            Icon(
-              Icons.panorama_fisheye_outlined,
-              color: Colors.green,
-              size: 20.0,
-            ),
-            Icon(
-              Icons.mail,
-              color: Color.fromARGB(255, 216, 117, 110),
-            ),
-            RaisedButton(onPressed: () {}, child: Text("click here")),
+            Expanded(
+                flex: 1,
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Color.fromARGB(255, 97, 233, 102),
+                )),
+            Expanded(
+                flex: 2,
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Colors.amber,
+                ))
           ],
         ),
         floatingActionButton: FloatingActionButton(
