@@ -16,12 +16,24 @@ void main() {
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 233, 106, 119),
         ),
-        body: Center(
-          child: Text('$name',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 22, 133, 148))),
+        body: Row(
+          children: <Widget>[
+            Text('$name',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 25, 116, 128))),
+            Icon(
+              Icons.panorama_fisheye_outlined,
+              color: Colors.green,
+              size: 20.0,
+            ),
+            Icon(
+              Icons.mail,
+              color: Color.fromARGB(255, 216, 117, 110),
+            ),
+            RaisedButton(onPressed: () {}, child: Text("click here")),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {i = (i + 1) % 4, name = list[i]},
