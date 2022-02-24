@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 void main() {
   var list = ["mustapha", "samir", "fares", "abdelkader", "yacine"];
   var i = 0;
+  var name = list[i];
   runApp(
     MaterialApp(
       home: Scaffold(
@@ -15,7 +16,9 @@ void main() {
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 233, 106, 119),
         ),
-        body: Image.asset('assets/2.jpg'), //
+        body: Center(
+          child: Text('$name'),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {i = (i + 1) % 4},
           child: Icon(Icons.add_card),
