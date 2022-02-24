@@ -17,7 +17,11 @@ void main() {
           backgroundColor: Color.fromARGB(255, 233, 106, 119),
         ),
         body: Center(
-          child: Text('$name'),
+          child: Text('$name',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 22, 133, 148))),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {i = (i + 1) % 4, name = list[i]},
