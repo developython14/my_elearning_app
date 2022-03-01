@@ -1,13 +1,26 @@
 // Copyright 2018 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 void main() {
   runApp(MaterialApp(title: 'ustapha belkassem ', initialRoute: '/', routes: {
     '/': (context) => const mustapha(),
     "/start": (context) => const belkassem(),
   }));
+}
+
+void getData() async {
+  Response response =
+      await get(Uri.parse('https://www.breakingbadapi.com/api/characters/1'));
+  List musta = jsonDecode(response.body);
+  Map bel = jsonDecode(response.body);
+  print(musta);
+  print(bel);
 }
 
 class mustapha extends StatefulWidget {
@@ -29,7 +42,7 @@ class _mustaphaState extends State<mustapha> {
       body: Column(
         children: [
           Text("hi i'm mustrapha  belkassem"),
-          Text("yes i'm guerrier")
+          Text("yes i'm guerrier"),
         ],
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +73,7 @@ class _belkassemState extends State<belkassem> {
       appBar: AppBar(
         title: Text('belkassem web app'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 111, 255, 116),
+        backgroundColor: Color.fromARGB(255, 177, 9, 211),
       ),
       body: Column(
         children: [Text("rah yemchi suitch "), Text("yes i'm gueriier kbiir ")],
@@ -69,7 +82,7 @@ class _belkassemState extends State<belkassem> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/');
+          getData();
         },
         child: Icon(Icons.power_off_outlined),
         focusColor: Colors.amber,
