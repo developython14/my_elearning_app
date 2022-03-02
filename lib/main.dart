@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'package:mustapha/pages/home.dart';
 import 'package:mustapha/pages/choose_actor.dart';
 import 'package:mustapha/pages/loading.dart';
+import 'package:mustapha/pages/form.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,5 +18,6 @@ void main() {
         '/loading': (context) => const loading(),
         "/chose": (context) => const choose_actor(),
         "/home": (context) => const home(),
+        "/form": (context) => const MyApp(),
       }));
 }

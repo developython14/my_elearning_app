@@ -4,13 +4,6 @@ import 'package:mustapha/main.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
-void getData() async {
-  Response response =
-      await get(Uri.parse('https://www.breakingbadapi.com/api/characters/1'));
-  var bel = jsonDecode(response.body[0]);
-  Navigator.pushNamed(context, '/chose');
-}
-
 class loading extends StatefulWidget {
   const loading({Key? key}) : super(key: key);
 
@@ -19,11 +12,17 @@ class loading extends StatefulWidget {
 }
 
 class _loadingState extends State<loading> {
+  void getData() async {
+    Response response =
+        await get(Uri.parse('https://www.breakingbadapi.com/api/characters/1'));
+    var bel = jsonDecode(response.body[0]);
+    Navigator.pushNamed(context, '/chose');
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getData();
   }
 
   @override
@@ -38,9 +37,14 @@ class _loadingState extends State<loading> {
       body: Center(
         child: SpinKitCubeGrid(
           color: Colors.white,
-          size: 100.0,
+          size: 80.0,
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (() => {
+                Navigator.pushNamed(context, '/form'),
+              }),
+          child: Icon(Icons.account_box)),
     );
   }
 }
