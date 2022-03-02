@@ -42,7 +42,7 @@ class _loadingState extends State<loading> {
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: (() => {
-                Navigator.pushNamed(context, '/form'),
+                Navigator.pushNamed(context, '/home'),
               }),
           child: Icon(Icons.account_box)),
     );
