@@ -12,15 +12,16 @@ class _loadingState extends State<loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Color.fromARGB(255, 8, 230, 15),
       appBar: AppBar(
         title: Text('mustapha'),
         centerTitle: true,
-        foregroundColor: Color.fromARGB(255, 2, 137, 247),
+        foregroundColor: Color.fromARGB(255, 2, 141, 255),
       ),
       body: Center(
-        child: SpinKitRotatingCircle(
+        child: SpinKitSpinningLines(
           color: Colors.white,
-          size: 50.0,
+          size: 80.0,
         ),
       ),
       floatingActionButton: FloatingActionButton(
