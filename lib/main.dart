@@ -17,10 +17,8 @@ void main() {
 void getData() async {
   Response response =
       await get(Uri.parse('https://www.breakingbadapi.com/api/characters/1'));
-  List musta = jsonDecode(response.body);
-  Map bel = jsonDecode(response.body);
-  print(musta);
-  print(bel);
+  Map bel = jsonDecode(response.body[0]);
+  print(bel['name']);
 }
 
 class mustapha extends StatefulWidget {
