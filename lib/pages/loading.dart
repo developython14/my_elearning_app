@@ -28,7 +28,7 @@ class _loadingState extends State<loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 8, 230, 15),
+      backgroundColor: Color.fromARGB(255, 248, 14, 92))),
       appBar: AppBar(
         title: Text('mustapha'),
         centerTitle: true,
