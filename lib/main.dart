@@ -2,22 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
+import 'package:mustapha/pages/home.dart';
+import 'package:mustapha/pages/choose_actor.dart';
+import 'package:mustapha/pages/loading.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'ustapha belkassem ', initialRoute: '/', routes: {
-    '/': (context) => const mustapha(),
-    "/start": (context) => const belkassem(),
-  }));
+  runApp(MaterialApp(
+      title: 'ustapha belkassem ',
+      initialRoute: '/loading',
+      routes: {
+        '/loading': (context) => const loading(),
+        "/chose": (context) => const choose_actor(),
+        "/home": (context) => const home(),
+      }));
 }
 
 void getData() async {
   Response response =
       await get(Uri.parse('https://www.breakingbadapi.com/api/characters/1'));
-  Map bel = jsonDecode(response.body[0]);
+  var bel = jsonDecode(response.body[0]);
   print(bel['name']);
 }
 
