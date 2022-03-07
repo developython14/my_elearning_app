@@ -39,7 +39,9 @@ class _choose_actorState extends State<choose_actor> {
           itemBuilder: (context, index) {
             return Card(
               child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                   Navigator.pushNamed(context, '/home' ,{"name":'mustaphawlidaintaya'}),
+                  },
                   title: Text(listactor[index]),
                   leading: CircleAvatar(
                     backgroundImage: AssetImage('assets/0.jpg'),
